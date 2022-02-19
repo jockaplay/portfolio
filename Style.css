@@ -32,7 +32,6 @@ body{
 @media screen and (min-width: 800px){
     .cabecalho-menu-cel{
         display: none;
-        gap: 35px;
     }
 }
 
@@ -43,7 +42,6 @@ body{
     }
     .cabecalho-menu{
         display: none;
-        gap: 35px;
     }
 }
 
@@ -117,8 +115,14 @@ body{
 
 .cabecalho-menu-item{
     font-family: 'Montserrat Alternates', sans-serif;
-    color: rgb(236, 238, 250);
+    color: rgb(255, 255, 255);
     font-weight: 500;
+    padding: 20px 10px;
+}
+
+.cabecalho-menu-item:hover{
+    background-color: rgba(255, 255, 255, 0.178);
+    border-radius: 10px;
 }
 
 .conteudo{
@@ -157,29 +161,48 @@ body{
 }
 
 .conteudo-principal-escrito-botao{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
     border: tomato solid 2px;
     color: rgb(255, 255, 255);
     background: none;
-    width: 100px;
-    height: 30px;
+    width: 170px;
+    padding: 10px 35px;
     box-shadow: 3px 5px 5px -2px rgba(0, 0, 0, 0.548);
+    transition: 0.2s;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 3px;
 }
 
-.conteudo-principal-escrito-botao:hover{
+.conteudo-principal-escrito-botao::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+    
+    width: 0%;
+    height: 100%;
+
     background-color: tomato;
-    color: rgb(255, 255, 255);
-    width: 100px;
-    height: 30px;
-    box-shadow: 3px 5px 5px -2px rgba(0, 0, 0, 0.548);
+    z-index: -1;
+
+    transition: 0.3s ease;
 }
 
-.conteudo-principal-escrito-botao:active{
-    background-color: rgb(216, 76, 51);
-    color: rgb(255, 255, 255);
-    width: 100px;
-    height: 30px;
-    border: none;
-    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.548);
+.conteudo-principal-escrito-botao:hover::before{
+    width: 100%;
+}
+
+.conteudo-principal-escrito-botao1{
+    color: white;
+    text-decoration: none;
 }
 
 .conteudo-principal-imagem-dock{
